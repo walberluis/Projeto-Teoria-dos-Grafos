@@ -4,11 +4,11 @@ Este projeto foi desenvolvido como parte do curso do 3º semestre de Ciência da
 
 Alunos: Walber Luis Santos da Paixão e Helio José Ribeiro Rego
 
-# Algoritmos Implementados  
-* Kosaraju  
-- Dijkstra  
- + Prim  
-Kruskal  
-[5° Algoritmo]
+# Algoritmos Implementados:
+* Kosaraju
+* Dijkstra
+* Prim
+* Kruskal  
+* [5° Algoritmo]
 
 Linguagem: C++
