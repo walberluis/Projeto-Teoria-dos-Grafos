@@ -12,6 +12,3 @@ Kruskal
 [5° Algoritmo]
 
 Linguagem: C++
-
-o
-u
