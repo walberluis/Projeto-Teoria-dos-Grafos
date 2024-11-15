@@ -71,10 +71,10 @@ void floyd_warshall(vector<vector<int>>& graph, vector<vector<int>>& next, int n
         for (int j = 0; j < n; j++) {
             if (i == j) {
                 graph[i][j] = 0;
-            } else if (graph[i][j] == 0) {
-                graph[i][j] = INF;
-            } else {
-                next[i][j] = j; // Existe uma aresta de i para j
+            }
+
+            if (graph[i][j] != INF) {
+                next[i][j] = j;
             }
         }
     }
@@ -115,7 +115,7 @@ int main(int argc, char** argv) {
     int qtdVertices, qtdArestas;
     fin >> qtdVertices >> qtdArestas;
 
-    vector<vector<int>> graph(qtdVertices, vector<int>(qtdVertices, 0));
+    vector<vector<int>> graph(qtdVertices, vector<int>(qtdVertices, INF));
 
     for (int i = 0; i < qtdArestas; i++) {
         int u, v, w;
