@@ -26,12 +26,14 @@ $(EXEC): $(SRC)/floydWarshall.cpp
 test: $(EXEC)
 	@echo "Executando testes..."
 	@mkdir -p $(TEST_DIR)/Resultados
-	@for i in {1..20}; do \
+	@for i in $$(seq 1 20); do \
 		echo "Testando caso $$i..."; \
 		./$(EXEC) < $(CASE_DIR)/caso_floyd_warshall$$i.txt > $(TEST_DIR)/Resultados/output$$i.txt; \
-		diff -q $(TEST_DIR)/Resultados/output$$i.txt $(ANSWER_DIR)/output$$i.txt && \
-		echo "Caso $$i: Sucesso" || \
-		echo "Caso $$i: Falha"; \
+		if diff -q $(TEST_DIR)/Resultados/output$$i.txt $(ANSWER_DIR)/output$$i.txt > /dev/null; then \
+			echo "Caso $$i: Sucesso"; \
+		else \
+			echo "Caso $$i: Falha"; \
+		fi \
 	done
 
 # Limpar arquivos gerados
@@ -39,3 +41,4 @@ clean:
 	@rm -f $(EXEC)
 	@rm -rf $(TEST_DIR)/Resultados
 	@echo "Limpeza concluída."
+
