@@ -8,7 +8,7 @@ Linguagem escolhida: C++
 * Dijkstra
 * Prim
 * Kruskal  
-* [5° Algoritmo]
+* Floyd-Warshall
 
 # Alunos
 * Walber Luis Santos da Paixão
